@@ -1,3 +1,7 @@
+const bestCharge = require('../src/best-charge.js');
+const loadAllItems = require('../src/items.js');
+const loadPromotions = require('../src/promotions.js');
+
 describe('Take out food', function () {
 
   it('should generate best charge when best is 指定菜品半价', function() {
