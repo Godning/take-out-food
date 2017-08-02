@@ -1,6 +1,6 @@
 'use strict';
-const loadAllItems = require('../src/items.js');
-const loadPromotions = require('../src/promotions.js');
+//const loadAllItems = require('../src/items.js');
+//const loadPromotions = require('../src/promotions.js');
 
 function bestCharge(selectedItems) {
   let item_list = build_item_list(selectedItems);
@@ -52,7 +52,7 @@ function calc_item_type(item_list, promotion){
   price_list.item_list.forEach(function(item){
     price_list.total += item.total;
   });
-  
+
   if(promotion.type === '满30减6元'){
     if(price_list.total >= 30){
       price_list.cut = 6;
@@ -111,4 +111,4 @@ function build_promotions_str(type, cut){
   return promo_str;
 }
 
-module.exports = bestCharge;
+//module.exports = bestCharge;

@@ -18,4 +18,4 @@ function loadAllItems() {
   }];
 }
 
-module.exports = loadAllItems;
+//module.exports = loadAllItems;

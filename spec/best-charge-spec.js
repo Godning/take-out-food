@@ -1,10 +1,12 @@
-const bestCharge = require('../src/best-charge.js');
-const loadAllItems = require('../src/items.js');
-const loadPromotions = require('../src/promotions.js');
+'use strict';
+//const loadAllItems = require('../src/items.js');
+//const loadPromotions = require('../src/promotions.js');
 
 describe('Take out food', function () {
 
-  it('should generate best charge when best is 指定菜品半价', function() {
+  const bestCharge = require('../src/best-charge.js');
+
+  it('should generate best charge when best is 指定菜品半价', function () {
     let inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();
     let expected = `
@@ -17,11 +19,11 @@ describe('Take out food', function () {
 指定菜品半价(黄焖鸡，凉皮)，省13元
 -----------------------------------
 总计：25元
-===================================`.trim()
-    expect(summary).toEqual(expected)
+===================================`.trim();
+    expect(summary).toEqual(expected);
   });
 
-  it('should generate best charge when best is 满30减6元', function() {
+  it('should generate best charge when best is 满30减6元', function () {
     let inputs = ["ITEM0013 x 4", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();
     let expected = `
@@ -33,11 +35,11 @@ describe('Take out food', function () {
 满30减6元，省6元
 -----------------------------------
 总计：26元
-===================================`.trim()
-    expect(summary).toEqual(expected)
+===================================`.trim();
+    expect(summary).toEqual(expected);
   });
 
-  it('should generate best charge when no promotion can be used', function() {
+  it('should generate best charge when no promotion can be used', function () {
     let inputs = ["ITEM0013 x 4"];
     let summary = bestCharge(inputs).trim();
     let expected = `
@@ -45,8 +47,8 @@ describe('Take out food', function () {
 肉夹馍 x 4 = 24元
 -----------------------------------
 总计：24元
-===================================`.trim()
-    expect(summary).toEqual(expected)
+===================================`.trim();
+    expect(summary).toEqual(expected);
   });
 
 });
